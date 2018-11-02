@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html>
+
+  <title>Final example</title>
+
+
+  <canvas id="trails" style="border: 1px solid;"  width="400" height="600"> </canvas>
+
+<div style='display:none;'>
+<img id='src' src="data:image/jpeg;base64,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" />
+</div>
+
+  <script>
+
+        var gravel = new Image();
+
+        //gravel.src = "gravel.jpg";
+	gravel.src = document.getElementById('src').src;   //base64的图片
+	
+        gravel.onload = function () {
+
+            drawTrails();
+
+        }
+
+
+		//绘制树枝，树叶部分的路径
+        function createCanopyPath(context) {
+
+            context.beginPath();
+
+            context.moveTo(-25, -50);
+
+            context.lineTo(-10, -80);
+
+            context.lineTo(-20, -80);
+
+            context.lineTo(-5, -110);
+
+            context.lineTo(-15, -110);
+
+
+
+            context.lineTo(0, -140);
+
+
+
+            context.lineTo(15, -110);
+
+            context.lineTo(5, -110);
+
+            context.lineTo(20, -80);
+
+            context.lineTo(10, -80);
+
+            context.lineTo(25, -50);
+
+            context.closePath();
+
+        }
+
+
+
+        function drawTree(context) {
+
+            context.save();
+			
+            //变换
+            context.transform(1, 0, -0.5, 1, 0, 0);
+
+            context.scale(1, 0.6);//缩放
+
+            context.fillStyle = 'rgba(0, 0, 0, 0.2)';
+
+            context.fillRect(-5, -50, 10, 50);//树影的身体的部分，（x坐标,y坐标,宽，高）
+
+            createCanopyPath(context);
+
+            context.fill();
+
+            context.restore();
+
+
+				//线性渐变,
+            var trunkGradient = context.createLinearGradient(-5, 0, 5, 0); //(x1,y1,x2,y2)
+
+            trunkGradient.addColorStop(0, '#663300');
+
+            trunkGradient.addColorStop(0.4, '#996600');
+
+            trunkGradient.addColorStop(1, '#552200');
+
+            context.fillStyle = trunkGradient;
+
+            context.fillRect(-5, -50, 10, 50);
+
+
+
+            var canopyShadow = context.createLinearGradient(0, -50, 0, 0);
+
+            canopyShadow.addColorStop(0, 'rgba(0, 0, 0, 0.5)');
+
+            canopyShadow.addColorStop(0.2, 'rgba(0, 0, 0, 0.0)');
+
+            context.fillStyle = canopyShadow;
+
+            context.fillRect(-5, -50, 10, 50);
+
+
+
+            createCanopyPath(context);
+
+
+
+            context.lineWidth = 4;
+
+            context.lineJoin = 'round';
+
+            context.strokeStyle = '#663300';
+
+            context.stroke();//画线
+
+
+
+            context.fillStyle = '#339900';
+
+            context.fill();
+
+        }
+
+
+
+
+
+        function drawTrails() {
+
+            var canvas = document.getElementById('trails');
+
+            var context = canvas.getContext('2d');
+
+
+
+            context.save();
+	
+            //坐标系平移
+            context.translate(130, 250);
+
+            drawTree(context);
+
+            context.restore();
+
+
+
+            context.save();
+
+            context.translate(260, 500);
+
+
+
+            context.scale(2, 2);
+
+            drawTree(context);
+
+            context.restore();
+
+
+
+            context.save();
+
+            context.translate(-10, 350);
+
+            context.beginPath();
+
+            context.moveTo(0, 0);
+
+            context.quadraticCurveTo(170, -50, 260, -190);//画正切弧线
+
+            context.quadraticCurveTo(310, -250, 410,-250);
+
+            context.strokeStyle = context.createPattern(gravel, 'repeat');
+
+            context.lineWidth = 20;
+
+            context.stroke();
+
+            context.restore();
+
+
+
+            context.save();
+
+            context.font = "60px impact";
+
+            context.textAlign = 'center';
+
+            context.fillStyle = '#996600';
+
+            context.fillText('Happy Trails!', 200, 60, 400);
+
+            context.restore();
+
+        }
+
+
+
+  </script>
+
+</html>
